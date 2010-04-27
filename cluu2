@@ -1,0 +1,14 @@
+#!/bin/sh
+
+while :; do
+    echo ================= `tty`
+    for f in `seq 1 100`; do
+        echo "$(tty) $(uuid)" >>a;
+    done
+    cluu a
+    git ci -a -m "$(tty) lagt til 100"
+    git f
+    git merge under/master
+    cluu a
+    git ci -a -m "`tty` etter merge under/master"
+done
